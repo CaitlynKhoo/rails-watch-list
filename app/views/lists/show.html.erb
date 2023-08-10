@@ -7,7 +7,6 @@
       <%= link_to '🗑️', bookmark_path(params:{bookmark_id:bookmark}), data: { turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
     <% end %>
   </ul>
-  <%= link_to "create bookmark",
-  new_list_bookmark_path(@list) %>
+  <%= link_to "create bookmark", new_list_bookmark_path(@list) %>
   </div>
 </div>
