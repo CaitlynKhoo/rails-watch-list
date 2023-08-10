@@ -1,0 +1,10 @@
+<div class="container">
+<h1>🎥 📜</h1>
+<div class="lists mb-4">
+    <% @lists.each do |list| %>
+      <%= link_to "#{list.name}", list_path(list), class: "text-dark" "text-decoration-none"%>
+      <br>
+    <% end %>
+</div>
+  <%= link_to "New list", new_list_path %>
+</div>

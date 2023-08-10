@@ -74,3 +74,5 @@ gem "autoprefixer-rails", "~> 10.4"
 gem "font-awesome-sass", "~> 6.4"
 
 gem "simple_form", "~> 5.2"
+
+gem "faker", "~> 3.2"

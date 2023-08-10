@@ -1,0 +1,15 @@
+<div class="container">
+  <h1>Create new 📜</h1>
+  <%= simple_form_for(@list) do |f| %>
+  <div class="form-inputs">
+    <%= f.input :name, collection: ["Thriller", "Horror", "Sci-fi", "Fantasy", "Drama", "Romance", "Musical", "Historical", "Animated", "Documentary"] %>
+  </div>
+  <div class="form-actions">
+    <%= f.button :submit, class: 'btn btn-primary mt-2' %>
+  </div>
+  <% end %>
+</div>
+
+  <%# has_many :bookmarks
+  has_many :movies, through: :bookmarks, dependent: :destroy
+  validates :name, uniqueness: true, presence: true %>
