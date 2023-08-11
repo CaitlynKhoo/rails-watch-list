@@ -7,15 +7,17 @@
   </div>
 </div>
 <div class="container">
-  <div class="lists mb-4">
-      <% @lists.each do |list| %>
-        <%= link_to "#{list.name}", list_path(list), class: "text-dark" "text-decoration-none"%>
-        <%= link_to "🗑️", list_path(list), data: { turbo_method: :delete, turbo_confirm: "Delete #{list.name}?" } %>
-        <% if list.photo.attached? %>
-          <%= cl_image_tag(list.photo.key, width: 400, height: 300, crop: :fill) %>
+  <div class="cards">
+    <div class="lists mb-4">
+        <% @lists.each do |list| %>
+          <%= link_to "#{list.name}", list_path(list), class: "text-dark" "text-decoration-none" 'card-add-link'%>
+          <%= link_to "🗑️", list_path(list), data: { turbo_method: :delete, turbo_confirm: "Delete #{list.name}?", class: 'card-remove-link'} %>
+          <% if list.photo.attached? %>
+            <%= cl_image_tag(list.photo.key, width: 400, height: 300, crop: :fill, class: "card-category") %>
+          <% end %>
+          <br>
         <% end %>
-        <br>
-      <% end %>
+    </div>
   </div>
 </div>
 
