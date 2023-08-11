@@ -11,6 +11,9 @@
       <% @lists.each do |list| %>
         <%= link_to "#{list.name}", list_path(list), class: "text-dark" "text-decoration-none"%>
         <%= link_to "🗑️", list_path(list), data: { turbo_method: :delete, turbo_confirm: "Delete #{list.name}?" } %>
+        <% if list.photo.attached? %>
+          <%= cl_image_tag(list.photo.key, width: 400, height: 300, crop: :fill) %>
+        <% end %>
         <br>
       <% end %>
   </div>
