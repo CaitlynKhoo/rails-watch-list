@@ -10,16 +10,18 @@
   <div class="cards">
     <div class="lists mb-4">
         <% @lists.each do |list| %>
-          <%= link_to "#{list.name}", list_path(list), class: "text-dark" "text-decoration-none" 'card-add-link'%>
-          <%= link_to "🗑️", list_path(list), data: { turbo_method: :delete, turbo_confirm: "Delete #{list.name}?", class: 'card-remove-link'} %>
-          <% if list.photo.attached? %>
-            <%= cl_image_tag(list.photo.key, width: 400, height: 300, crop: :fill, class: "card-category") %>
-          <% end %>
-          <br>
+          <%# if list.photo.attached? %>
+            <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= list.photo.attached? ? cl_image_path(list.photo.key, width: 400, height: 300, crop: :fill, class: "card-category") : 'https://static.wikia.nocookie.net/us-2019-film/images/e/ed/0595AC61-0C1B-48ED-BB8E-256B58E25820.jpeg' %>')">
+              <%= link_to "#{list.name}", list_path(list), class: "text-dark" "text-decoration-none" 'card-add-link'%>
+
+              <%= link_to "🗑️", list_path(list), data: { turbo_method: :delete, turbo_confirm: "Delete #{list.name}?", class: 'card-remove-link'} %>
+            </div>
         <% end %>
     </div>
   </div>
 </div>
+
+
 
 <%#  %>
 
