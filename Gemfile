@@ -78,3 +78,5 @@ gem "simple_form", "~> 5.2"
 gem "faker", "~> 3.2"
 
 gem "dotenv-rails", "~> 2.8"
+
+gem "cloudinary", "~> 1.27"
